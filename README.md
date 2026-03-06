@@ -1,22 +1,23 @@
 # SONU Electronic Voting System
 
-An industrial-grade, terminal-based electronic voting application developed in **C**. [cite_start]This project was designed to facilitate elections for the **Students Organization of Nairobi University (SONU)**[cite: 9], featuring multi-race support, concurrency protection, and automated tallying.
+An industrial-grade, terminal-based electronic voting application developed in **C**. This project was designed to facilitate elections for the **Students Organization of Nairobi University (SONU)**, featuring multi-race support, concurrency protection, and automated tallying.
 
 ## 🚀 Features
 
-* [cite_start]**Dynamic Race Management**: Administrators can define multiple positions (e.g., Chairman, Secretary General)[cite: 9].
-* [cite_start]**Voter & Candidate Registration**: Secure registration for students and aspirants with unique ID generation[cite: 9].
-* **Relational Ballot System**: Voters can cast one ballot per race/position, preventing double-voting in a single category.
-* [cite_start]**Thread-Safe Concurrency**: Uses `pthread` mutex locks to prevent race conditions during simultaneous voting.
-* [cite_start]**Automated Tallying**: Implements a Bubble Sort algorithm to rank candidates and automatically identify winners or ties[cite: 11, 15].
-* [cite_start]**Data Persistence**: All records are stored in binary `.dat` files for efficiency and durability.
+- **Dynamic Race Management**: Administrators can define multiple positions (e.g., Chairman, Secretary General)
+- **Voter & Candidate Registration**: Secure registration for students and aspirants with unique ID generation
+- **Relational Ballot System**: Voters can cast one ballot per race/position, preventing double-voting in a single category
+- **Thread-Safe Concurrency**: Uses `pthread` mutex locks to prevent race conditions during simultaneous voting
+- **Automated Tallying**: Implements a Bubble Sort algorithm to rank candidates and automatically identify winners or ties
+- **Data Persistence**: All records are stored in binary `.dat` files for efficiency and durability
 
 ---
 
 ## 🏗️ Architectural Design
 
-[cite_start]The project follows a modular C structure to separate logic from data and interface[cite: 13]:
+The project follows a modular C structure to separate logic from data and interface:
 
+```
 VotingSystem/
 ├── bin/          # Compiled executable (sonu_vote.exe)
 ├── include/      # Header files (.h) defining data structures
@@ -24,21 +25,28 @@ VotingSystem/
 ├── obj/          # Intermediate object files (.o)
 ├── data/         # Binary database files (.dat)
 └── Makefile      # Automated build system
+```
 
+## 🛠️ Technical Specifications
 
-## 🛠️ **Technical Specifications**
-**Language:** C (GCC 14.2.0+)
-**Concurrency:** POSIX Threads (lpthread) 
-**File I/O:** Binary stream handling (fread, fwrite, fseek) 
-**Algorithm:** Bubble Sort for vote tallying
-
+| Aspect | Details |
+|--------|---------|
+| **Language** | C (GCC 14.2.0+) |
+| **Concurrency** | POSIX Threads (lpthread) |
+| **File I/O** | Binary stream handling (fread, fwrite, fseek) |
+| **Algorithm** | Bubble Sort for vote tallying |
 
 ## 📥 Installation & Setup
-Clone the project into your VS Code workspace.
-Ensure you have MinGW-w64 (with msys64) installed and added to your path.
+
+1. Clone the project into your VS Code workspace
+2. Ensure you have MinGW-w64 (with msys64) installed and added to your path
 
 **Compile the project using the provided Makefile:**
+```bash
 mingw32-make
+```
 
 **Run the application:**
+```bash
 ./bin/sonu_vote.exe
+```
