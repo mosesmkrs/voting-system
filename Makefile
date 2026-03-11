@@ -37,3 +37,11 @@ release: all
 clean:
 	@if exist $(BIN_DIR) rd /s /q $(BIN_DIR)
 	@if exist $(OBJ_DIR) rd /s /q $(OBJ_DIR)
+
+
+dist: all
+	@if not exist dist mkdir dist
+	@if not exist dist\data mkdir dist\data
+	copy "$(BIN_DIR)\sonu_vote.exe" "dist\"
+	copy "$(BIN_DIR)\*.dll" "dist\"
+	@echo --- FOLDER READY TO ZIP: /dist ---

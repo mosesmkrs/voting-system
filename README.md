@@ -20,6 +20,7 @@ The project follows a modular C structure to separate logic from data and interf
 ```
 VotingSystem/
 ├── bin/          # Compiled executable (sonu_vote.exe)
+├── dist/         # Distribution folder with executable (sonu_vote.exe)
 ├── include/      # Header files (.h) defining data structures
 ├── src/          # Source code (.c) implementation modules
 ├── obj/          # Intermediate object files (.o)
@@ -48,5 +49,5 @@ mingw32-make
 
 **Run the application:**
 ```bash
-./bin/sonu_vote.exe
+./dist/sonu_vote.exe
 ```
